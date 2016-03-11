@@ -65,6 +65,28 @@ markup.
 	</li>
 </flex-slider>
 ```
+## Custom Navigation Buttons
+
+This fork has added a single directive `custom-direction-nav` that can be used as attribute.
+
+```
+<div ng-repeat="categoryImages in vm.project.images" ng-show="$index == vm.selectedCategory">
+  <flex-slider custom-direction-nav='$(".custom-navigation a")' animation="slide" direction-nav="true" slide="file in categoryImages.files track by $index">
+    <img ng-src="images/{{file.file}}">
+  </flex-slider>
+</div>
+
+<!-- INCLUDE CUSTOM NAVIGATION MARKUP -->
+<div class="custom-navigation">
+  <a class="shity-prev-button-wrapper flex-prev">
+    <img src="images/prev-arrow.svg" alt="prev-arrow" id="prev-arrow" class="shity-gallery-button" />
+  </a>
+  <div class="custom-controls-container"></div>
+  <a class="shity-next-button-wrapper flex-next">
+    <img src="images/next-arrow.svg" alt="next-arrow" id="next-arrow" class="shity-gallery-button" />
+  </a>
+</div>
+```
 
 ### Properties
 
